@@ -36,8 +36,8 @@ function LoginPage() {
         </form>
         <div className="pt-2 text-sm">
           Don't have an account?{" "}
-          <Link href="/signin">
-            <span className="text-blue-500 hover:underline">Sign In</span>
+          <Link href="/signup">
+            <span className="text-blue-500 hover:underline">Sign Up</span>
           </Link>
         </div>
       </div>
