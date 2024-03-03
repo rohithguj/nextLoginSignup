@@ -1,10 +1,10 @@
 // app/components/signin1.tsx
 import React, { useState } from "react";
-import { useAppStore } from "../useAppStore";
+import { useSignUpStore } from "../useSignUpStore";
 
 const Step1 = () => {
   const { formData, setFormData, nextStep, formValid, validateForm } =
-    useAppStore();
+    useSignUpStore();
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;

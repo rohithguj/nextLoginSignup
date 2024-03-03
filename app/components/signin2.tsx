@@ -1,8 +1,8 @@
 import React from "react";
-import { useAppStore } from "../useAppStore";
+import { useSignUpStore } from "../useSignUpStore";
 
 const Step2 = () => {
-  const { formData, setFormData, submitForm, previousStep } = useAppStore();
+  const { formData, setFormData, submitForm, previousStep } = useSignUpStore();
 
   const handleChange = (e: { target: { value: any } }) => {
     setFormData({ ...formData, password: e.target.value });
@@ -10,7 +10,6 @@ const Step2 = () => {
 
   return (
     <div className="space-y-4">
-      
       <div>
         <label className="block text-sm font-semibold text-gray-600">
           Password

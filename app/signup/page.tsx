@@ -2,7 +2,7 @@
 "use client";
 
 // @ts-ignore
-import { useAppStore } from "../useAppStore";
+import { useAppStore } from "../useSignUpStore";
 import Step1 from "../components/signin1";
 import Step2 from "../components/signin2";
 import Link from "next/link";

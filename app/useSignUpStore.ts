@@ -15,7 +15,7 @@ interface StoreActions {
   validateForm: () => void;
 }
 
-const useAppStore = create<StoreState & StoreActions>((set, get) => ({
+const useSignUpStore = create<StoreState & StoreActions>((set, get) => ({
   formData: {
     username: "",
     email: "",
@@ -80,4 +80,4 @@ const validateEmail = (email: string) => {
   return emailRegex.test(email);
 };
 
-export { useAppStore };
+export { useSignUpStore };
