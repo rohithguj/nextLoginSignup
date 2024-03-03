@@ -10,6 +10,7 @@ interface StoreState {
 interface StoreActions {
   setFormData: (data: Partial<FormState>) => void;
   nextStep: () => void;
+  previousStep: () => void;
   submitForm: () => void;
   validateForm: () => void;
 }
@@ -24,22 +25,20 @@ const useAppStore = create<StoreState & StoreActions>((set, get) => ({
   },
   step: 1,
   formValid: false,
-    setFormData: (data) => {
-        set((state) => ({
-            formData: { ...state.formData, ...(data as Partial<FormState>) },
-        }))
-        console.log(get().formData);
-    },
-    
+  setFormData: (data) => {
+    set((state) => ({
+      formData: { ...state.formData, ...(data as Partial<FormState>) },
+    }));
+    console.log(get().formData);
+  },
+
   nextStep: () => set((state) => ({ step: state.step + 1 })),
+  previousStep: () => set((state) => ({ step: state.step - 1 })),
   validateForm: () => {
-    console.log("validating")
+    console.log("validating");
     const formData = get().formData;
-      const emailIsValid = validateEmail(formData.email);
-    const requiredFields: (keyof FormState)[] = [
-      "username",
-      "email"
-    ];
+    const emailIsValid = validateEmail(formData.email);
+    const requiredFields: (keyof FormState)[] = ["username", "email"];
     const formIsValid = requiredFields.every(
       (field) => formData[field].trim() !== ""
     );
